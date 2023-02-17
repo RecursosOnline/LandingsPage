@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Windows.Data.Json;
 using WinUICommunity.LandingsPage.Internal;
@@ -252,7 +253,12 @@ public sealed class ControlInfoDataSource
                         }
                         else
                         {
-                            Type pageType = Type.GetType(pageString);
+                            Type pageType = null;
+                            Assembly assembly = Assembly.Load(item.ApiNamespace);
+                            if (assembly is not null)
+                            {
+                                pageType = assembly.GetType(pageString);
+                            }
                             item.IncludedInBuild = pageType != null;
                         }
                         
