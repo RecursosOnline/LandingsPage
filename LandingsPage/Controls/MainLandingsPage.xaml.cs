@@ -50,9 +50,9 @@ public sealed partial class MainLandingsPage : ItemsPageBase
         this.InitializeComponent();
     }
 
-    public async void GetControlInfoDataAsync(string ControlInfoData, string Namespace = null, bool IsIncludedInBuildJson = true)
+    public async void GetControlInfoDataAsync(string ControlInfoData, IncludedInBuildMode IncludedInBuildMode = IncludedInBuildMode.CheckBasedOnIncludedInBuildProperty)
     {
-        await ControlInfoDataSource.Instance.GetGroupsAsync(ControlInfoData, Namespace, IsIncludedInBuildJson);
+        await ControlInfoDataSource.Instance.GetGroupsAsync(ControlInfoData, IncludedInBuildMode);
         Items = ControlInfoDataSource.Instance.Groups.SelectMany(g => g.Items.Where(i => i.BadgeString != null)).OrderBy(i => i.Title).ToList();
         GetCollectionViewSource().Source = FormatData();
     }
@@ -73,13 +73,16 @@ public sealed partial class MainLandingsPage : ItemsPageBase
 
         if (groupList.Any())
         {
-            //Move Preview samples to the back of the list
-            var previewGroup = groupList.ElementAt(1);
-            if (previewGroup?.Key.ToString() == "Preview")
+            //Move Preview to the back of the list
+            foreach (var item in groupList?.ToList())
             {
-                groupList.RemoveAt(1);
-                groupList.Insert(groupList.Count, previewGroup);
+                if (item?.Key.ToString() == "Preview")
+                {
+                    groupList?.Remove(item);
+                    groupList?.Insert(groupList.Count, item);
+                }
             }
+            
 
             foreach (var item in groupList)
             {
