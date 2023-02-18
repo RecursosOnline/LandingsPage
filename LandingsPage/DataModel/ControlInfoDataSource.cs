@@ -141,40 +141,40 @@ public sealed class ControlInfoDataSource
         get { return this._groups; }
     }
 
-    public async Task<IEnumerable<ControlInfoDataGroup>> GetGroupsAsync(string ControlInfoData, IncludedInBuildMode IncludedInBuildMode = IncludedInBuildMode.CheckBasedOnIncludedInBuildProperty)
+    public async Task<IEnumerable<ControlInfoDataGroup>> GetGroupsAsync(string JsonRelativeFilePath, IncludedInBuildMode IncludedInBuildMode = IncludedInBuildMode.CheckBasedOnIncludedInBuildProperty)
     {
-        await _instance.GetControlInfoDataAsync(ControlInfoData, IncludedInBuildMode);
+        await _instance.GetControlInfoDataAsync(JsonRelativeFilePath, IncludedInBuildMode);
 
         return _instance.Groups;
     }
 
-    public async Task<ControlInfoDataGroup> GetGroupAsync(string uniqueId, string ControlInfoData, IncludedInBuildMode IncludedInBuildMode = IncludedInBuildMode.CheckBasedOnIncludedInBuildProperty)
+    public async Task<ControlInfoDataGroup> GetGroupAsync(string uniqueId, string JsonRelativeFilePath, IncludedInBuildMode IncludedInBuildMode = IncludedInBuildMode.CheckBasedOnIncludedInBuildProperty)
     {
-        await _instance.GetControlInfoDataAsync(ControlInfoData, IncludedInBuildMode);
+        await _instance.GetControlInfoDataAsync(JsonRelativeFilePath, IncludedInBuildMode);
         // Simple linear search is acceptable for small data sets
         var matches = _instance.Groups.Where((group) => group.UniqueId.Equals(uniqueId));
         if (matches.Count() == 1) return matches.First();
         return null;
     }
 
-    public async Task<ControlInfoDataItem> GetItemAsync(string uniqueId, string ControlInfoData, IncludedInBuildMode IncludedInBuildMode = IncludedInBuildMode.CheckBasedOnIncludedInBuildProperty)
+    public async Task<ControlInfoDataItem> GetItemAsync(string uniqueId, string JsonRelativeFilePath, IncludedInBuildMode IncludedInBuildMode = IncludedInBuildMode.CheckBasedOnIncludedInBuildProperty)
     {
-        await _instance.GetControlInfoDataAsync(ControlInfoData, IncludedInBuildMode);
+        await _instance.GetControlInfoDataAsync(JsonRelativeFilePath, IncludedInBuildMode);
         // Simple linear search is acceptable for small data sets
         var matches = _instance.Groups.SelectMany(group => group.Items).Where((item) => item.UniqueId.Equals(uniqueId));
         if (matches.Count() > 0) return matches.First();
         return null;
     }
 
-    public async Task<ControlInfoDataGroup> GetGroupFromItemAsync(string uniqueId, string ControlInfoData, IncludedInBuildMode IncludedInBuildMode = IncludedInBuildMode.CheckBasedOnIncludedInBuildProperty)
+    public async Task<ControlInfoDataGroup> GetGroupFromItemAsync(string uniqueId, string JsonRelativeFilePath, IncludedInBuildMode IncludedInBuildMode = IncludedInBuildMode.CheckBasedOnIncludedInBuildProperty)
     {
-        await _instance.GetControlInfoDataAsync(ControlInfoData, IncludedInBuildMode);
+        await _instance.GetControlInfoDataAsync(JsonRelativeFilePath, IncludedInBuildMode);
         var matches = _instance.Groups.Where((group) => group.Items.FirstOrDefault(item => item.UniqueId.Equals(uniqueId)) != null);
         if (matches.Count() == 1) return matches.First();
         return null;
     }
 
-    private async Task GetControlInfoDataAsync(string ControlInfoData, IncludedInBuildMode IncludedInBuildMode = IncludedInBuildMode.CheckBasedOnIncludedInBuildProperty)
+    private async Task GetControlInfoDataAsync(string JsonRelativeFilePath, IncludedInBuildMode IncludedInBuildMode = IncludedInBuildMode.CheckBasedOnIncludedInBuildProperty)
     {
         lock (_lock)
         {
@@ -184,7 +184,7 @@ public sealed class ControlInfoDataSource
             }
         }
 
-        string jsonText = await FileLoader.LoadText(ControlInfoData);
+        string jsonText = await FileLoader.LoadText(JsonRelativeFilePath);
 
         JsonObject jsonObject = JsonObject.Parse(jsonText);
         JsonArray jsonArray = jsonObject["Groups"].GetArray();

@@ -2,7 +2,6 @@
 // Licensed under the MIT License.
 
 using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Data;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -50,9 +49,9 @@ public sealed partial class MainLandingsPage : ItemsPageBase
         this.InitializeComponent();
     }
 
-    public async void GetControlInfoDataAsync(string ControlInfoData, IncludedInBuildMode IncludedInBuildMode = IncludedInBuildMode.CheckBasedOnIncludedInBuildProperty)
+    public async void GetDataAsync(string JsonRelativeFilePath, IncludedInBuildMode IncludedInBuildMode = IncludedInBuildMode.CheckBasedOnIncludedInBuildProperty)
     {
-        await ControlInfoDataSource.Instance.GetGroupsAsync(ControlInfoData, IncludedInBuildMode);
+        await ControlInfoDataSource.Instance.GetGroupsAsync(JsonRelativeFilePath, IncludedInBuildMode);
         Items = ControlInfoDataSource.Instance.Groups.SelectMany(g => g.Items.Where(i => i.BadgeString != null)).OrderBy(i => i.Title).ToList();
         GetCollectionViewSource().Source = FormatData();
     }
@@ -109,6 +108,4 @@ public sealed partial class MainLandingsPage : ItemsPageBase
     {
         return LayoutVisualStates.CurrentState == NarrowLayout;
     }
-
-   
 }
