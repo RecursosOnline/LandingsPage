@@ -67,9 +67,9 @@ use MainLandingsPage:
 
 ```xml
 <controls:MainLandingsPage x:Name="mainLandingsPage" Loaded="mainLandingsPage_Loaded"
-                    HomePageHeaderImage="ms-appx:///Assets/GalleryHeaderImage.png"
-                    Title="WinUI 3 Gallery"
-                    Description="WinAppSDK 1.2"
+                    HeaderImage="ms-appx:///Assets/GalleryHeaderImage.png"
+                    HeaderText="WinUI 3 Gallery"
+                    HeaderSubtitleText="WinAppSDK 1.2"
                     OnItemClick="mainLandingsPage_OnItemClick">
     <controls:MainLandingsPage.HeaderContent>
         <StackPanel Orientation="Horizontal" Spacing="10">
@@ -118,7 +118,7 @@ in code-behind:
 ```cs
 private void mainLandingsPage_Loaded(object sender, RoutedEventArgs e)
 {
-    mainLandingsPage.GetControlInfoDataAsync("DataModel/ControlInfoData.json");
+    mainLandingsPage.GetDataAsync("DataModel/ControlInfoData.json");
 }
 
 private void mainLandingsPage_OnItemClick(object sender, RoutedEventArgs e)

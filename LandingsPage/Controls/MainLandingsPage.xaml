@@ -58,8 +58,8 @@
                     </Grid.RowDefinitions>
                     <controls:HomePageHeaderImage
                         Grid.RowSpan="2"
-                        Height="396"
-                        HeaderImage="{x:Bind HomePageHeaderImage}"
+                        Height="{x:Bind HeaderImageHeight}"
+                        HeaderImage="{x:Bind HeaderImage}"
                         VerticalAlignment="Top" />
 
                     <TextBlock AutomationProperties.AutomationId="__ClickableAreaTextBlock" />
@@ -70,11 +70,11 @@
                         <TextBlock
                             x:Name="smallHeaderSubtitleText"
                             FontSize="18"
-                            Text="{x:Bind Description}" />
+                            Text="{x:Bind HeaderSubtitleText}" />
                         <TextBlock
                             x:Name="smallHeaderText"
                             Style="{StaticResource TitleLargeTextBlockStyle}"
-                            Text="{x:Bind Title}" />
+                            Text="{x:Bind HeaderText}" />
                     </StackPanel>
 
                     <controls:TileGallery

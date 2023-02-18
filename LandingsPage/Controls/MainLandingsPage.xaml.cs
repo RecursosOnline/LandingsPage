@@ -14,16 +14,16 @@ public sealed partial class MainLandingsPage : ItemsPageBase
     public string UpdatedGroupText { get; set; } = "Recently updated";
     public string PreviewGroupText { get; set; } = "Preview";
 
-    public string Title
+    public string HeaderText
     {
-        get { return (string) GetValue(TitleProperty); }
-        set { SetValue(TitleProperty, value); }
+        get { return (string) GetValue(HeaderTextProperty); }
+        set { SetValue(HeaderTextProperty, value); }
     }
 
-    public string Description
+    public string HeaderSubtitleText
     {
-        get { return (string) GetValue(DescriptionProperty); }
-        set { SetValue(DescriptionProperty, value); }
+        get { return (string) GetValue(HeaderSubtitleTextProperty); }
+        set { SetValue(HeaderSubtitleTextProperty, value); }
     }
 
     public object HeaderContent
@@ -32,22 +32,29 @@ public sealed partial class MainLandingsPage : ItemsPageBase
         set { SetValue(HeaderContentProperty, value); }
     }
 
-    public string HomePageHeaderImage
+    public string HeaderImage
     {
-        get { return (string) GetValue(HomePageHeaderImageProperty); }
-        set { SetValue(HomePageHeaderImageProperty, value); }
+        get { return (string) GetValue(HeaderImageProperty); }
+        set { SetValue(HeaderImageProperty, value); }
     }
 
-    public static readonly DependencyProperty TitleProperty = DependencyProperty.Register("Title", typeof(string), typeof(MainLandingsPage), new PropertyMetadata(default(string)));
-    public static readonly DependencyProperty DescriptionProperty = DependencyProperty.Register("Description", typeof(string), typeof(MainLandingsPage), new PropertyMetadata(default(string)));
-    public static readonly DependencyProperty HomePageHeaderImageProperty = DependencyProperty.Register("HomePageHeaderImage", typeof(string), typeof(MainLandingsPage), new PropertyMetadata(default(string)));
-    public static readonly DependencyProperty HeaderContentProperty = DependencyProperty.Register("HeaderContent", typeof(object), typeof(MainLandingsPage), new PropertyMetadata(null));
+    public double HeaderImageHeight
+    {
+        get { return (double) GetValue(HeaderImageHeightProperty); }
+        set { SetValue(HeaderImageHeightProperty, value); }
+    }
 
+    public static readonly DependencyProperty HeaderTextProperty = DependencyProperty.Register("HeaderText", typeof(string), typeof(MainLandingsPage), new PropertyMetadata(default(string)));
+    public static readonly DependencyProperty HeaderSubtitleTextProperty = DependencyProperty.Register("HeaderSubtitleText", typeof(string), typeof(MainLandingsPage), new PropertyMetadata(default(string)));
+    public static readonly DependencyProperty HeaderImageProperty = DependencyProperty.Register("HeaderImage", typeof(string), typeof(MainLandingsPage), new PropertyMetadata(default(string)));
+    public static readonly DependencyProperty HeaderContentProperty = DependencyProperty.Register("HeaderContent", typeof(object), typeof(MainLandingsPage), new PropertyMetadata(null));
+    public static readonly DependencyProperty HeaderImageHeightProperty = DependencyProperty.Register("HeaderImageHeight", typeof(double), typeof(MainLandingsPage), new PropertyMetadata(396.0));
 
     public MainLandingsPage()
     {
         this.InitializeComponent();
     }
+
 
     public async void GetDataAsync(string JsonRelativeFilePath, IncludedInBuildMode IncludedInBuildMode = IncludedInBuildMode.CheckBasedOnIncludedInBuildProperty)
     {
