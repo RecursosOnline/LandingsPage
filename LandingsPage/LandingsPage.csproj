@@ -45,7 +45,7 @@
     </XAMLCombineItems>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\WinUICommunity.Shared\WinUICommunity.Shared.csproj" />
+    <ProjectReference Include="..\..\WinUICommunity.Shared\WinUICommunity.Shared\WinUICommunity.Shared.csproj" />
   </ItemGroup>
   
   <ItemGroup>
