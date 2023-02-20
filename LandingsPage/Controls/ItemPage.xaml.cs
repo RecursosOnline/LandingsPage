@@ -6,7 +6,7 @@ using System.Reflection;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
 using WinUICommunity.Shared.DataModel;
-using WinUICommunity.Shared.Internal;
+using WinUICommunity.Shared.Navigation;
 
 namespace WinUICommunity.LandingsPage.Controls;
 

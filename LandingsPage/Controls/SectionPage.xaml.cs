@@ -4,7 +4,7 @@
 using Microsoft.UI.Xaml.Navigation;
 using System.Linq;
 using WinUICommunity.Shared.DataModel;
-using WinUICommunity.Shared.Internal;
+using WinUICommunity.Shared.Navigation;
 
 namespace WinUICommunity.LandingsPage.Controls;
 public sealed partial class SectionPage : ItemsPageBase
