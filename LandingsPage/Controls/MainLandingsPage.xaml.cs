@@ -43,12 +43,35 @@ public sealed partial class MainLandingsPage : ItemsPageBase
         get { return (double) GetValue(HeaderImageHeightProperty); }
         set { SetValue(HeaderImageHeightProperty, value); }
     }
-
+    public Thickness HeaderMargin
+    {
+        get { return (Thickness) GetValue(HeaderMarginProperty); }
+        set { SetValue(HeaderMarginProperty, value); }
+    }
+    public object FooterContent
+    {
+        get { return (object) GetValue(FooterContentProperty); }
+        set { SetValue(FooterContentProperty, value); }
+    }
+    public double FooterHeight
+    {
+        get { return (double) GetValue(FooterHeightProperty); }
+        set { SetValue(FooterHeightProperty, value); }
+    }
+    public Thickness FooterMargin
+    {
+        get { return (Thickness) GetValue(FooterMarginProperty); }
+        set { SetValue(FooterMarginProperty, value); }
+    }
     public static readonly DependencyProperty HeaderTextProperty = DependencyProperty.Register("HeaderText", typeof(string), typeof(MainLandingsPage), new PropertyMetadata(default(string)));
     public static readonly DependencyProperty HeaderSubtitleTextProperty = DependencyProperty.Register("HeaderSubtitleText", typeof(string), typeof(MainLandingsPage), new PropertyMetadata(default(string)));
     public static readonly DependencyProperty HeaderImageProperty = DependencyProperty.Register("HeaderImage", typeof(string), typeof(MainLandingsPage), new PropertyMetadata(default(string)));
     public static readonly DependencyProperty HeaderContentProperty = DependencyProperty.Register("HeaderContent", typeof(object), typeof(MainLandingsPage), new PropertyMetadata(null));
     public static readonly DependencyProperty HeaderImageHeightProperty = DependencyProperty.Register("HeaderImageHeight", typeof(double), typeof(MainLandingsPage), new PropertyMetadata(396.0));
+    public static readonly DependencyProperty HeaderMarginProperty = DependencyProperty.Register("HeaderMargin", typeof(Thickness), typeof(MainLandingsPage), new PropertyMetadata(new Thickness(-24, 0, -24, 0)));
+    public static readonly DependencyProperty FooterContentProperty = DependencyProperty.Register("FooterContent", typeof(object), typeof(MainLandingsPage), new PropertyMetadata(null));
+    public static readonly DependencyProperty FooterHeightProperty = DependencyProperty.Register("FooterHeight", typeof(double), typeof(MainLandingsPage), new PropertyMetadata(200.0));
+    public static readonly DependencyProperty FooterMarginProperty = DependencyProperty.Register("FooterMargin", typeof(Thickness), typeof(MainLandingsPage), new PropertyMetadata(new Thickness(16,34,48,0)));
 
     public MainLandingsPage()
     {

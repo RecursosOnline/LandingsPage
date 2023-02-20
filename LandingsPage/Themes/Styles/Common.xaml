@@ -24,6 +24,10 @@
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
     </Style>
 
+    <Style x:Key="GridViewItemStyle" BasedOn="{StaticResource DefaultGridViewItemStyle}" TargetType="GridViewItem">
+        <Setter Property="Margin" Value="0,0,12,12" />
+    </Style>
+
     <Style x:Key="ScrollButtonStyle" TargetType="Button">
         <Setter Property="Background" Value="{ThemeResource FlipViewNextPreviousButtonBackground}" />
         <Setter Property="BackgroundSizing" Value="InnerBorderEdge" />
