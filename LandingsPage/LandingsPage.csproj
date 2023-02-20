@@ -47,6 +47,21 @@
   <ItemGroup>
     <ProjectReference Include="..\..\WinUICommunity.Shared\WinUICommunity.Shared\WinUICommunity.Shared.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Page Update="Controls\ItemPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Controls\SectionPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Controls\PageHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
   
   <ItemGroup>
     <Page Update="Themes\ItemTemplates.xaml">

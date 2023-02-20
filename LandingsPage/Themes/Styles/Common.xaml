@@ -7,6 +7,7 @@
     xmlns:common="using:WinUICommunity.LandingsPage.Internal">
 
     <common:NullToVisibilityConverter x:Key="nullToVisibilityConverter" />
+    <common:EmptyStringToVisibilityConverter x:Key="emptyStringToVisibilityConverter" />
 
     <x:Double x:Key="Breakpoint640Plus">641</x:Double>
     

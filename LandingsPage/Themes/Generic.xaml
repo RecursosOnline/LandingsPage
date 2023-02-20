@@ -35,6 +35,7 @@ Themes\Styles\Style.xaml
     </ResourceDictionary>
   </ResourceDictionary.ThemeDictionaries>
   <common:NullToVisibilityConverter x:Key="nullToVisibilityConverter" />
+  <common:EmptyStringToVisibilityConverter x:Key="emptyStringToVisibilityConverter" />
   <x:Double x:Key="Breakpoint640Plus">641</x:Double>
   <Style x:Key="IndentedGridViewItemStyleSmall" BasedOn="{StaticResource DefaultGridViewItemStyle}" TargetType="GridViewItem">
     <Setter Property="Margin" Value="12,0,12,12" />
