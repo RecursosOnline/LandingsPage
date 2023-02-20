@@ -5,7 +5,7 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Data;
 using System.Collections.ObjectModel;
 using System.Linq;
-using WinUICommunity.LandingsPage.DataModel;
+using WinUICommunity.Shared.DataModel;
 
 namespace WinUICommunity.LandingsPage.Controls;
 public sealed partial class MainLandingsPage : ItemsPageBase

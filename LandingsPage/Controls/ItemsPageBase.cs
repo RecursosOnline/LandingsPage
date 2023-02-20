@@ -5,8 +5,8 @@ using System.Runtime.CompilerServices;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using System.ComponentModel;
-using WinUICommunity.LandingsPage.DataModel;
 using Windows.Devices.Sensors;
+using WinUICommunity.Shared.DataModel;
 
 namespace WinUICommunity.LandingsPage.Controls;
 public abstract class ItemsPageBase : Page, INotifyPropertyChanged

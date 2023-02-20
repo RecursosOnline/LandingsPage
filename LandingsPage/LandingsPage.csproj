@@ -45,6 +45,10 @@
     </XAMLCombineItems>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\WinUICommunity.Shared\WinUICommunity.Shared.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
     <Page Update="Themes\ItemTemplates.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>

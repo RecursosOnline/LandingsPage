@@ -6,7 +6,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="using:WinUICommunity.LandingsPage.Controls"
-    xmlns:data="using:WinUICommunity.LandingsPage.DataModel"
+    xmlns:data="using:WinUICommunity.Shared.DataModel"
     HighContrastAdjustment="None"
     NavigationCacheMode="Enabled">
 

@@ -3,7 +3,7 @@
 
 using System.Linq;
 using Microsoft.UI.Xaml;
-using WinUICommunity.LandingsPage.DataModel;
+using WinUICommunity.Shared.DataModel;
 
 namespace WinUICommunity.LandingsPage.Controls;
 public sealed partial class AllLandingsPage : ItemsPageBase
