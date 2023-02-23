@@ -29,6 +29,12 @@ public sealed partial class PageHeader : UserControl
         set { SetValue(HeaderRightContentProperty, value); }
     }
 
+    public Visibility PageHeaderVisibility
+    {
+        get { return (Visibility) GetValue(PageHeaderVisibilityProperty); }
+        set { SetValue(PageHeaderVisibilityProperty, value); }
+    }
+
     public static readonly DependencyProperty DocumentationDropDownTextProperty =
         DependencyProperty.Register("DocumentationDropDownText", typeof(string), typeof(PageHeader), new PropertyMetadata("Documentation"));
     public static readonly DependencyProperty DocumentationDropDownIconElementProperty =
@@ -37,6 +43,8 @@ public sealed partial class PageHeader : UserControl
         DependencyProperty.Register("HeaderLeftContent", typeof(object), typeof(PageHeader), new PropertyMetadata(null));
     public static readonly DependencyProperty HeaderRightContentProperty =
         DependencyProperty.Register("HeaderRightContent", typeof(object), typeof(PageHeader), new PropertyMetadata(null));
+    public static readonly DependencyProperty PageHeaderVisibilityProperty =
+        DependencyProperty.Register("PageHeaderVisibility", typeof(Visibility), typeof(PageHeader), new PropertyMetadata(Visibility.Visible));
 
     public ControlInfoDataItem Item
     {

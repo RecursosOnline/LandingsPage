@@ -3,6 +3,7 @@
 
 using System;
 using System.Reflection;
+using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
 using WinUICommunity.Shared.DataModel;
@@ -12,6 +13,15 @@ namespace WinUICommunity.LandingsPage.Controls;
 
 public sealed partial class ItemPage : Page
 {
+    public Visibility PageHeaderVisibility
+    {
+        get { return (Visibility) GetValue(PageHeaderVisibilityProperty); }
+        set { SetValue(PageHeaderVisibilityProperty, value); }
+    }
+
+    public static readonly DependencyProperty PageHeaderVisibilityProperty =
+        DependencyProperty.Register("PageHeaderVisibility", typeof(Visibility), typeof(ItemPage), new PropertyMetadata(Visibility.Visible));
+
     public ControlInfoDataItem Item
     {
         get { return _item; }
