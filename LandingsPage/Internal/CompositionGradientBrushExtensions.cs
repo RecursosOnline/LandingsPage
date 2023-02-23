@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.WinUI.UI.Animations;
-using Microsoft.UI.Xaml.Media.Animation;
 using Microsoft.UI;
 using Microsoft.UI.Composition;
+using Microsoft.UI.Xaml.Media.Animation;
 using Windows.UI;
 
 namespace WinUICommunity.LandingsPage.Internal;

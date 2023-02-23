@@ -1,6 +1,6 @@
 ﻿using System;
-using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Data;
 
 namespace WinUICommunity.LandingsPage.Internal;
 internal class NullToVisibilityConverter : IValueConverter

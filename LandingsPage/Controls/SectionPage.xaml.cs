@@ -1,8 +1,8 @@
 ﻿// Copyright (c) Microsoft Corporation and Contributors.
 // Licensed under the MIT License.
 
-using Microsoft.UI.Xaml.Navigation;
 using System.Linq;
+using Microsoft.UI.Xaml.Navigation;
 using WinUICommunity.Shared.DataModel;
 using WinUICommunity.Shared.Navigation;
 
