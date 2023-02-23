@@ -30,6 +30,7 @@
     <PackageReference Include="CommunityToolkit.WinUI.UI" Version="7.1.2" />
     <PackageReference Include="CommunityToolkit.WinUI.UI.Animations" Version="7.1.2" />
     <PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.4" />
+    <PackageReference Include="WinUICommunity.Shared" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="XAMLTools.MSBuild" Version="1.0.0-alpha0143">
@@ -42,9 +43,6 @@
       <TargetFile>Themes\Generic.xaml</TargetFile>
       <Visible>True</Visible>
     </XAMLCombineItems>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\WinUICommunity.Shared\WinUICommunity.Shared\WinUICommunity.Shared.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Page Update="Controls\ItemPage.xaml">
