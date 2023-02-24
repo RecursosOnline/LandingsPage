@@ -18,9 +18,36 @@ public sealed partial class ItemPage : Page
         get { return (Visibility) GetValue(PageHeaderVisibilityProperty); }
         set { SetValue(PageHeaderVisibilityProperty, value); }
     }
-
+    public string DocumentationDropDownText
+    {
+        get { return (string) GetValue(DocumentationDropDownTextProperty); }
+        set { SetValue(DocumentationDropDownTextProperty, value); }
+    }
+    public IconElement DocumentationDropDownIconElement
+    {
+        get { return (IconElement) GetValue(DocumentationDropDownIconElementProperty); }
+        set { SetValue(DocumentationDropDownIconElementProperty, value); }
+    }
+    public object HeaderLeftContent
+    {
+        get { return (object) GetValue(HeaderLeftContentProperty); }
+        set { SetValue(HeaderLeftContentProperty, value); }
+    }
+    public object HeaderRightContent
+    {
+        get { return (object) GetValue(HeaderRightContentProperty); }
+        set { SetValue(HeaderRightContentProperty, value); }
+    }
     public static readonly DependencyProperty PageHeaderVisibilityProperty =
         DependencyProperty.Register("PageHeaderVisibility", typeof(Visibility), typeof(ItemPage), new PropertyMetadata(Visibility.Visible));
+    public static readonly DependencyProperty DocumentationDropDownTextProperty =
+        DependencyProperty.Register("DocumentationDropDownText", typeof(string), typeof(ItemPage), new PropertyMetadata("Documentation"));
+    public static readonly DependencyProperty DocumentationDropDownIconElementProperty =
+        DependencyProperty.Register("DocumentationDropDownIconElement", typeof(IconElement), typeof(ItemPage), new PropertyMetadata(new FontIcon { Glyph = "\xE130" }));
+    public static readonly DependencyProperty HeaderLeftContentProperty =
+        DependencyProperty.Register("HeaderLeftContent", typeof(object), typeof(ItemPage), new PropertyMetadata(null));
+    public static readonly DependencyProperty HeaderRightContentProperty =
+        DependencyProperty.Register("HeaderRightContent", typeof(object), typeof(ItemPage), new PropertyMetadata(null));
 
     public ControlInfoDataItem Item
     {

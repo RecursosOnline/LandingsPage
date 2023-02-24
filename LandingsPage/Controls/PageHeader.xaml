@@ -73,9 +73,7 @@
                 </DropDownButton>
                 <ContentPresenter Content="{x:Bind HeaderLeftContent}"/>
             </StackPanel>
-            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                <ContentPresenter Content="{x:Bind HeaderRightContent}"/>
-            </StackPanel>
+            <ContentPresenter HorizontalAlignment="Right" Content="{x:Bind HeaderRightContent}"/>
         </Grid>
     </Grid>
 </UserControl>
