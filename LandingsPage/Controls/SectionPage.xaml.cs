@@ -30,7 +30,7 @@ public sealed partial class SectionPage : ItemsPageBase
         var menuItem = (Microsoft.UI.Xaml.Controls.NavigationViewItemBase) navigationView.MenuItems.Single(i => (string) ((Microsoft.UI.Xaml.Controls.NavigationViewItemBase) i).Tag == group.UniqueId);
         menuItem.IsSelected = true;
         TitleTxt.Text = group.Title;
-        Items = group.Items.OrderBy(i => i.Title).ToList();
+        Items = group.Items.Where(i => !i.HideItem).OrderBy(i => i.Title).ToList();
     }
     protected override bool GetIsNarrowLayoutState()
     {

@@ -42,6 +42,7 @@ public abstract class ItemsPageBase : Page, INotifyPropertyChanged
         if (item != null)
         {
             args.ItemContainer.IsEnabled = item.IncludedInBuild;
+            args.ItemContainer.Visibility = item.HideItem ? Visibility.Collapsed : Visibility.Visible;
         }
     }
 
