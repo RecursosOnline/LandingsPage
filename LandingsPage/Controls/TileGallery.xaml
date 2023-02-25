@@ -18,7 +18,9 @@
             SizeChanged="scroller_SizeChanged"
             VerticalScrollMode="Disabled"
             ViewChanging="scroller_ViewChanging">
-            <ContentPresenter Content="{x:Bind HeaderContent}" Margin="36,0,36,0"/>
+            <Grid x:Name="ContentGrid" Margin="36,0,36,0">
+                <ContentPresenter Content="{x:Bind HeaderContent}" />
+            </Grid>
         </ScrollViewer>
         <Button
             x:Name="ScrollBackBtn"

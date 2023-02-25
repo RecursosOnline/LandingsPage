@@ -81,7 +81,6 @@
                         x:Name="headerTileGallery"
                         Grid.Row="1"
                         Margin="0,0,0,0"
-                        Visibility="{x:Bind HeaderContent, Converter={StaticResource nullToVisibilityConverter}, Mode=OneWay}"
                         HeaderContent="{x:Bind HeaderContent}"/>
                 </Grid>
             </GridView.Header>
@@ -102,7 +101,7 @@
             </GridView.GroupStyle>
 
             <GridView.Footer>
-                <Grid Visibility="{x:Bind FooterContent, Converter={StaticResource nullToVisibilityConverter}, Mode=OneWay}" VerticalAlignment="Bottom" Height="{x:Bind FooterHeight}" Margin="{x:Bind FooterMargin}">
+                <Grid VerticalAlignment="Bottom" Height="{x:Bind FooterHeight}" Margin="{x:Bind FooterMargin}">
                     <ContentPresenter Content="{x:Bind FooterContent}" />
                 </Grid>
             </GridView.Footer>
