@@ -19,7 +19,7 @@
             VerticalScrollMode="Disabled"
             ViewChanging="scroller_ViewChanging">
             <Grid x:Name="ContentGrid" Margin="36,0,36,0">
-                <ContentPresenter Content="{x:Bind HeaderContent}" />
+                <ContentPresenter Content="{x:Bind HeaderContent, Mode=OneWay}" />
             </Grid>
         </ScrollViewer>
         <Button

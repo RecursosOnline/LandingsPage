@@ -58,8 +58,8 @@
                     </Grid.RowDefinitions>
                     <controls:HomePageHeaderImage
                         Grid.RowSpan="2"
-                        Height="{x:Bind HeaderImageHeight}"
-                        HeaderImage="{x:Bind HeaderImage}"
+                        Height="{x:Bind HeaderImageHeight, Mode=OneWay}"
+                        HeaderImage="{x:Bind HeaderImage, Mode=OneWay}"
                         VerticalAlignment="Top" />
 
                     <TextBlock AutomationProperties.AutomationId="__ClickableAreaTextBlock" />
@@ -70,11 +70,13 @@
                         <TextBlock
                             x:Name="smallHeaderSubtitleText"
                             FontSize="18"
-                            Text="{x:Bind HeaderSubtitleText}" />
+                            Foreground="{x:Bind HeaderSubtitleForeground, Mode=OneWay}"
+                            Text="{x:Bind HeaderSubtitleText, Mode=OneWay}" />
                         <TextBlock
                             x:Name="smallHeaderText"
                             Style="{StaticResource TitleLargeTextBlockStyle}"
-                            Text="{x:Bind HeaderText}" />
+                            Foreground="{x:Bind HeaderForeground, Mode=OneWay}"
+                            Text="{x:Bind HeaderText, Mode=OneWay}" />
                     </StackPanel>
 
                     <controls:TileGallery
@@ -82,7 +84,7 @@
                         Grid.Row="1"
                         Margin="0,0,0,0"
                         Visibility="{x:Bind HeaderContent, Converter={StaticResource nullToVisibilityConverter}, Mode=OneWay}"
-                        HeaderContent="{x:Bind HeaderContent}"/>
+                        HeaderContent="{x:Bind HeaderContent, Mode=OneWay}"/>
                 </Grid>
             </GridView.Header>
 
@@ -102,8 +104,8 @@
             </GridView.GroupStyle>
 
             <GridView.Footer>
-                <Grid Visibility="{x:Bind FooterContent, Converter={StaticResource nullToVisibilityConverter}, Mode=OneWay}" VerticalAlignment="Bottom" Height="{x:Bind FooterHeight}" Margin="{x:Bind FooterMargin}">
-                    <ContentPresenter Content="{x:Bind FooterContent}" />
+                <Grid Visibility="{x:Bind FooterContent, Converter={StaticResource nullToVisibilityConverter}, Mode=OneWay}" VerticalAlignment="Bottom" Height="{x:Bind FooterHeight, Mode=OneWay}" Margin="{x:Bind FooterMargin, Mode=OneWay}">
+                    <ContentPresenter Content="{x:Bind FooterContent, Mode=OneWay}" />
                 </Grid>
             </GridView.Footer>
         </GridView>

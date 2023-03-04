@@ -3,6 +3,7 @@
 
 using System.Linq;
 using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Media;
 using WinUICommunity.Shared.DataModel;
 
 namespace WinUICommunity.LandingsPage.Controls;
@@ -25,10 +26,15 @@ public sealed partial class AllLandingsPage : ItemsPageBase
         get { return (double) GetValue(HeaderImageHeightProperty); }
         set { SetValue(HeaderImageHeightProperty, value); }
     }
-
+    public Brush HeaderForeground
+    {
+        get { return (Brush) GetValue(HeaderForegroundProperty); }
+        set { SetValue(HeaderForegroundProperty, value); }
+    }
     public static readonly DependencyProperty HeaderTextProperty = DependencyProperty.Register("HeaderText", typeof(string), typeof(AllLandingsPage), new PropertyMetadata("All"));
     public static readonly DependencyProperty HeaderImageProperty = DependencyProperty.Register("HeaderImage", typeof(string), typeof(AllLandingsPage), new PropertyMetadata(default(string)));
     public static readonly DependencyProperty HeaderImageHeightProperty = DependencyProperty.Register("HeaderImageHeight", typeof(double), typeof(AllLandingsPage), new PropertyMetadata(200.0));
+    public static readonly DependencyProperty HeaderForegroundProperty = DependencyProperty.Register("HeaderForeground", typeof(Brush), typeof(AllLandingsPage), new PropertyMetadata(Application.Current.Resources["TextFillColorPrimaryBrush"] as Brush));
 
     public AllLandingsPage()
     {

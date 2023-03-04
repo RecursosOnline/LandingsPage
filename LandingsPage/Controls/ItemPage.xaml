@@ -50,10 +50,10 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
-        <controls:PageHeader x:Name="pageHeader" DocumentationDropDownText="{x:Bind DocumentationDropDownText}"
-                             DocumentationDropDownIconElement="{x:Bind DocumentationDropDownIconElement}"
-                             HeaderLeftContent="{x:Bind HeaderLeftContent}" HeaderRightContent="{x:Bind HeaderRightContent}"
-                             Visibility="{x:Bind PageHeaderVisibility}" Item="{x:Bind Item, Mode=OneWay}" />
+        <controls:PageHeader x:Name="pageHeader" DocumentationDropDownText="{x:Bind DocumentationDropDownText, Mode=OneWay}"
+                             DocumentationDropDownIconElement="{x:Bind DocumentationDropDownIconElement, Mode=OneWay}"
+                             HeaderLeftContent="{x:Bind HeaderLeftContent, Mode=OneWay}" HeaderRightContent="{x:Bind HeaderRightContent, Mode=OneWay}"
+                             Visibility="{x:Bind PageHeaderVisibility, Mode=OneWay}" Item="{x:Bind Item, Mode=OneWay}" />
 
         <!--  Content Region  -->
         <ScrollViewer

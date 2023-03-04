@@ -7,7 +7,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:converters="using:CommunityToolkit.WinUI.UI.Converters"
     xmlns:data="using:WinUICommunity.Shared.DataModel"
-    Visibility="{x:Bind PageHeaderVisibility}">
+    Visibility="{x:Bind PageHeaderVisibility, Mode=OneWay}">
 
     <UserControl.Resources>
         <converters:CollectionVisibilityConverter
@@ -40,13 +40,13 @@
         <Grid Grid.Row="2" Margin="0,12,0,12">
             <StackPanel Orientation="Horizontal" Spacing="4">
                 <DropDownButton
-                    AutomationProperties.Name="{x:Bind DocumentationDropDownText}"
-                    ToolTipService.ToolTip="{x:Bind DocumentationDropDownText}"
+                    AutomationProperties.Name="{x:Bind DocumentationDropDownText, Mode=OneWay}"
+                    ToolTipService.ToolTip="{x:Bind DocumentationDropDownText, Mode=OneWay}"
                     Visibility="{x:Bind Item.Docs, Converter={StaticResource collectionConverter}}">
                     <DropDownButton.Content>
                         <StackPanel Orientation="Horizontal" Spacing="8">
-                            <ContentPresenter Content="{x:Bind DocumentationDropDownIconElement}"/>
-                            <TextBlock Text="{x:Bind DocumentationDropDownText}" />
+                            <ContentPresenter Content="{x:Bind DocumentationDropDownIconElement, Mode=OneWay}"/>
+                            <TextBlock Text="{x:Bind DocumentationDropDownText, Mode=OneWay}" />
                         </StackPanel>
                     </DropDownButton.Content>
                     <DropDownButton.Flyout>
@@ -71,9 +71,9 @@
                         </Flyout>
                     </DropDownButton.Flyout>
                 </DropDownButton>
-                <ContentPresenter Content="{x:Bind HeaderLeftContent}"/>
+                <ContentPresenter Content="{x:Bind HeaderLeftContent, Mode=OneWay}"/>
             </StackPanel>
-            <ContentPresenter HorizontalAlignment="Right" Content="{x:Bind HeaderRightContent}"/>
+            <ContentPresenter HorizontalAlignment="Right" Content="{x:Bind HeaderRightContent, Mode=OneWay}"/>
         </Grid>
     </Grid>
 </UserControl>

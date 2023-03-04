@@ -22,14 +22,14 @@
                 x:Name="HeroImage"
                 toolkit:VisualExtensions.NormalizedCenterPoint="0.5"
                 ImageOpened="OnImageOpened"
-                Source="{x:Bind HeaderImage}"
+                Source="{x:Bind HeaderImage, Mode=OneWay}"
                 Stretch="UniformToFill" />
 
             <Image
                 x:Name="HeroOverlayImage"
                 toolkit:VisualExtensions.NormalizedCenterPoint="0.5"
                 Opacity="0.5"
-                Source="{x:Bind HeaderImage}"
+                Source="{x:Bind HeaderImage, Mode=OneWay}"
                 Stretch="UniformToFill" />
 
         </Grid>

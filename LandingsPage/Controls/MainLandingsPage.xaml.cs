@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Data;
+using Microsoft.UI.Xaml.Media;
 using WinUICommunity.Shared.DataModel;
 
 namespace WinUICommunity.LandingsPage.Controls;
@@ -63,6 +64,16 @@ public sealed partial class MainLandingsPage : ItemsPageBase
         get { return (Thickness) GetValue(FooterMarginProperty); }
         set { SetValue(FooterMarginProperty, value); }
     }
+    public Brush HeaderForeground
+    {
+        get { return (Brush) GetValue(HeaderForegroundProperty); }
+        set { SetValue(HeaderForegroundProperty, value); }
+    }
+    public Brush HeaderSubtitleForeground
+    {
+        get { return (Brush) GetValue(HeaderSubtitleForegroundProperty); }
+        set { SetValue(HeaderSubtitleForegroundProperty, value); }
+    }
     public static readonly DependencyProperty HeaderTextProperty = DependencyProperty.Register("HeaderText", typeof(string), typeof(MainLandingsPage), new PropertyMetadata(default(string)));
     public static readonly DependencyProperty HeaderSubtitleTextProperty = DependencyProperty.Register("HeaderSubtitleText", typeof(string), typeof(MainLandingsPage), new PropertyMetadata(default(string)));
     public static readonly DependencyProperty HeaderImageProperty = DependencyProperty.Register("HeaderImage", typeof(string), typeof(MainLandingsPage), new PropertyMetadata(default(string)));
@@ -72,6 +83,8 @@ public sealed partial class MainLandingsPage : ItemsPageBase
     public static readonly DependencyProperty FooterContentProperty = DependencyProperty.Register("FooterContent", typeof(object), typeof(MainLandingsPage), new PropertyMetadata(null));
     public static readonly DependencyProperty FooterHeightProperty = DependencyProperty.Register("FooterHeight", typeof(double), typeof(MainLandingsPage), new PropertyMetadata(200.0));
     public static readonly DependencyProperty FooterMarginProperty = DependencyProperty.Register("FooterMargin", typeof(Thickness), typeof(MainLandingsPage), new PropertyMetadata(new Thickness(16,34,48,0)));
+    public static readonly DependencyProperty HeaderForegroundProperty = DependencyProperty.Register("HeaderForeground", typeof(Brush), typeof(MainLandingsPage), new PropertyMetadata(Application.Current.Resources["TextFillColorPrimaryBrush"] as Brush));
+    public static readonly DependencyProperty HeaderSubtitleForegroundProperty = DependencyProperty.Register("HeaderSubtitleForeground", typeof(Brush), typeof(MainLandingsPage), new PropertyMetadata(Application.Current.Resources["TextFillColorPrimaryBrush"] as Brush));
 
     public MainLandingsPage()
     {
