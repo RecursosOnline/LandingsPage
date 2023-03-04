@@ -15,7 +15,7 @@ using WinUICommunity.LandingsPage.Internal;
 
 namespace WinUICommunity.LandingsPage.Controls;
 // ATTRIBUTION: @RykenApps
-internal sealed partial class HomePageHeaderImage : UserControl
+public sealed partial class HomePageHeaderImage : UserControl
 {
     public string HeaderImage
     {
@@ -127,7 +127,6 @@ internal sealed partial class HomePageHeaderImage : UserControl
             .Scale(1, 1.1f, duration: TimeSpan.FromMilliseconds(400), easingMode: EasingMode.EaseOut)
             .Start(HeroOverlayImage);
     }
-
 
     private ExpressionAnimation CreateExpressionAnimation(string target, string expression)
     {

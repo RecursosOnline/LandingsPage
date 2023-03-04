@@ -5,15 +5,14 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
 namespace WinUICommunity.LandingsPage.Controls;
-internal sealed partial class TileGallery : UserControl
+public sealed partial class TileGallery : UserControl
 {
-    internal object HeaderContent
+    public object HeaderContent
     {
         get { return (object) GetValue(HeaderContentProperty); }
         set { SetValue(HeaderContentProperty, value); }
     }
-    internal static readonly DependencyProperty HeaderContentProperty = DependencyProperty.Register("HeaderContent", typeof(object), typeof(TileGallery), new PropertyMetadata(null));
-
+    public static readonly DependencyProperty HeaderContentProperty = DependencyProperty.Register("HeaderContent", typeof(object), typeof(TileGallery), new PropertyMetadata(null));
 
     public TileGallery()
     {
