@@ -33,7 +33,7 @@
  
 ### Create a landing page in the style of WinUI 3 and WinUI-Gallery very quickly and easily
 
-> **_NOTE:_** LandingsPage is based on `WindowsAppSDK` version `1.2.230217.4` stable and `Microsoft.Windows.SDK.BuildTools` version `10.0.22621.755`
+> **_NOTE:_** LandingsPage is based on `WindowsAppSDK` version `1.2.230313.1` stable and `Microsoft.Windows.SDK.BuildTools` version `10.0.22621.755`
 
 ## Dependencies
 
