@@ -31,7 +31,7 @@
     <PackageReference Include="CommunityToolkit.WinUI.UI" Version="7.1.2" />
     <PackageReference Include="CommunityToolkit.WinUI.UI.Animations" Version="7.1.2" />
     <PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.4" />
-    <PackageReference Include="WinUICommunity.Shared" Version="1.1.4" />
+    <PackageReference Include="WinUICommunity.Shared" Version="1.1.5" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="XAMLTools.MSBuild" Version="1.0.0-alpha0143">
