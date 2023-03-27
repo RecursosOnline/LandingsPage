@@ -80,7 +80,15 @@ public sealed partial class ItemPage : Page
             // Load control page into frame.
             if (!string.IsNullOrEmpty(item.ApiNamespace))
             {
-                Assembly assembly = Assembly.Load(item.ApiNamespace);
+                Assembly assembly;
+                if (string.IsNullOrEmpty(item.ApiNamespace))
+                {
+                    assembly = Application.Current.GetType().Assembly;
+                }
+                else
+                {
+                    assembly = Assembly.Load(item.ApiNamespace);
+                }
                 if (assembly is not null)
                 {
                     Type pageType = assembly.GetType(item.UniqueId);
