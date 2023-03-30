@@ -1,7 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation and Contributors.
-// Licensed under the MIT License.
-
-using System.Linq;
+﻿using System.Linq;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Media;
 

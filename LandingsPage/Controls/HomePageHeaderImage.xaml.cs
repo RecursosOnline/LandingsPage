@@ -1,7 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation and Contributors.
-// Licensed under the MIT License.
-
-using System;
+﻿using System;
 using System.Numerics;
 using CommunityToolkit.WinUI.UI;
 using CommunityToolkit.WinUI.UI.Animations;
