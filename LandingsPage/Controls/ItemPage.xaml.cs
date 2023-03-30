@@ -6,10 +6,8 @@ using System.Reflection;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
-using WinUICommunity.Shared.DataModel;
-using WinUICommunity.Shared.Navigation;
 
-namespace WinUICommunity.LandingsPage.Controls;
+namespace WinUICommunity;
 
 public sealed partial class ItemPage : Page
 {

@@ -2,7 +2,7 @@
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Data;
 
-namespace WinUICommunity.LandingsPage.Internal;
+namespace WinUICommunity;
 public class EmptyStringToVisibilityConverter : IValueConverter
 {
     public Visibility EmptyValue { get; set; } = Visibility.Collapsed;

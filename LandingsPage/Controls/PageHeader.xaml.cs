@@ -3,9 +3,8 @@
 
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using WinUICommunity.Shared.DataModel;
 
-namespace WinUICommunity.LandingsPage.Controls;
+namespace WinUICommunity;
 public sealed partial class PageHeader : UserControl
 {
     public string DocumentationDropDownText

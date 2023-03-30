@@ -6,9 +6,8 @@ using System.Linq;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Media;
-using WinUICommunity.Shared.DataModel;
 
-namespace WinUICommunity.LandingsPage.Controls;
+namespace WinUICommunity;
 public sealed partial class MainLandingsPage : ItemsPageBase
 {
     public string NewGroupText { get; set; } = "Recently added";

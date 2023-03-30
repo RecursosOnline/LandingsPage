@@ -9,7 +9,7 @@ using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
 using Windows.System;
 
-namespace WinUICommunity.LandingsPage.Controls;
+namespace WinUICommunity;
 public sealed partial class HeaderTile : UserControl
 {
     public event EventHandler<RoutedEventArgs> OnItemClick;

@@ -2,12 +2,12 @@
 <!-- Licensed under the MIT License. -->
 
 <Page
-    x:Class="WinUICommunity.LandingsPage.Controls.ItemPage"
+    x:Class="WinUICommunity.ItemPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:converters="using:CommunityToolkit.WinUI.UI.Converters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:controls="using:WinUICommunity.LandingsPage.Controls"
+    xmlns:local="using:WinUICommunity"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="pageRoot"
     mc:Ignorable="d">
@@ -50,7 +50,7 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
-        <controls:PageHeader x:Name="pageHeader" DocumentationDropDownText="{x:Bind DocumentationDropDownText, Mode=OneWay}"
+        <local:PageHeader x:Name="pageHeader" DocumentationDropDownText="{x:Bind DocumentationDropDownText, Mode=OneWay}"
                              DocumentationDropDownIconElement="{x:Bind DocumentationDropDownIconElement, Mode=OneWay}"
                              HeaderLeftContent="{x:Bind HeaderLeftContent, Mode=OneWay}" HeaderRightContent="{x:Bind HeaderRightContent, Mode=OneWay}"
                              Visibility="{x:Bind PageHeaderVisibility, Mode=OneWay}" Item="{x:Bind Item, Mode=OneWay}" />

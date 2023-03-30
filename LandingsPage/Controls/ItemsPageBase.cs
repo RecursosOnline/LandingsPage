@@ -5,9 +5,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using WinUICommunity.Shared.DataModel;
 
-namespace WinUICommunity.LandingsPage.Controls;
+namespace WinUICommunity;
 public abstract class ItemsPageBase : Page, INotifyPropertyChanged
 {
     public event EventHandler<RoutedEventArgs> OnItemClick;

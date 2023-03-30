@@ -4,9 +4,8 @@
 using System.Linq;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Media;
-using WinUICommunity.Shared.DataModel;
 
-namespace WinUICommunity.LandingsPage.Controls;
+namespace WinUICommunity;
 public sealed partial class AllLandingsPage : ItemsPageBase
 {
     public string HeaderImage

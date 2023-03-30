@@ -1,12 +1,8 @@
-﻿<!-- Copyright (c) Microsoft Corporation and Contributors. -->
-<!-- Licensed under the MIT License. -->
-
-<controls:ItemsPageBase
-    x:Class="WinUICommunity.LandingsPage.Controls.MainLandingsPage"
+﻿<local:ItemsPageBase
+    x:Class="WinUICommunity.MainLandingsPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controls="using:WinUICommunity.LandingsPage.Controls"
-    xmlns:data="using:WinUICommunity.Shared.DataModel"
+    xmlns:local="using:WinUICommunity"
     HighContrastAdjustment="None"
     NavigationCacheMode="Enabled">
 
@@ -56,7 +52,7 @@
                         <RowDefinition Height="204" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                    <controls:HomePageHeaderImage
+                    <local:HomePageHeaderImage
                         Grid.RowSpan="2"
                         Height="{x:Bind HeaderImageHeight, Mode=OneWay}"
                         HeaderImage="{x:Bind HeaderImage, Mode=OneWay}"
@@ -79,7 +75,7 @@
                             Text="{x:Bind HeaderText, Mode=OneWay}" />
                     </StackPanel>
 
-                    <controls:TileGallery
+                    <local:TileGallery
                         x:Name="headerTileGallery"
                         Grid.Row="1"
                         Margin="0,0,0,0"
@@ -91,7 +87,7 @@
             <GridView.GroupStyle>
                 <GroupStyle>
                     <GroupStyle.HeaderTemplate>
-                        <DataTemplate x:DataType="data:GroupInfoList">
+                        <DataTemplate x:DataType="local:GroupInfoList">
                             <TextBlock
                                 x:Name="pageSubtitle"
                                 Margin="4,32,0,0"
@@ -110,4 +106,4 @@
             </GridView.Footer>
         </GridView>
     </Grid>
-</controls:ItemsPageBase>
+</local:ItemsPageBase>

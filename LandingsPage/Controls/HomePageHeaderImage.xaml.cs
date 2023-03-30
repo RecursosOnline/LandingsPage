@@ -11,9 +11,8 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Hosting;
 using Microsoft.UI.Xaml.Media.Animation;
-using WinUICommunity.LandingsPage.Internal;
 
-namespace WinUICommunity.LandingsPage.Controls;
+namespace WinUICommunity;
 // ATTRIBUTION: @RykenApps
 public sealed partial class HomePageHeaderImage : UserControl
 {

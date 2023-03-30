@@ -4,7 +4,7 @@ using Microsoft.UI.Composition;
 using Microsoft.UI.Xaml.Media.Animation;
 using Windows.UI;
 
-namespace WinUICommunity.LandingsPage.Internal;
+namespace WinUICommunity;
 internal static class CompositionGradientBrushExtensions
 {
     /// <summary>

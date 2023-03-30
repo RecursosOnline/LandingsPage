@@ -4,10 +4,10 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:common="using:WinUICommunity.LandingsPage.Internal">
+    xmlns:local="using:WinUICommunity">
 
-    <common:NullToVisibilityConverter x:Key="nullToVisibilityConverter" />
-    <common:EmptyStringToVisibilityConverter x:Key="emptyStringToVisibilityConverter" />
+    <local:NullToVisibilityConverter x:Key="nullToVisibilityConverter" />
+    <local:EmptyStringToVisibilityConverter x:Key="emptyStringToVisibilityConverter" />
 
     <x:Double x:Key="Breakpoint640Plus">641</x:Double>
     
