@@ -33,6 +33,11 @@ public sealed partial class ItemPage : Page
         get { return (object) GetValue(HeaderRightContentProperty); }
         set { SetValue(HeaderRightContentProperty, value); }
     }
+    public PathType PathType
+    {
+        get { return (PathType) GetValue(PathTypeProperty); }
+        set { SetValue(PathTypeProperty, value); }
+    }
     public static readonly DependencyProperty PageHeaderVisibilityProperty =
         DependencyProperty.Register("PageHeaderVisibility", typeof(Visibility), typeof(ItemPage), new PropertyMetadata(Visibility.Visible));
     public static readonly DependencyProperty DocumentationDropDownTextProperty =
@@ -43,6 +48,8 @@ public sealed partial class ItemPage : Page
         DependencyProperty.Register("HeaderLeftContent", typeof(object), typeof(ItemPage), new PropertyMetadata(null));
     public static readonly DependencyProperty HeaderRightContentProperty =
         DependencyProperty.Register("HeaderRightContent", typeof(object), typeof(ItemPage), new PropertyMetadata(null));
+    public static readonly DependencyProperty PathTypeProperty =
+        DependencyProperty.Register("PathType", typeof(PathType), typeof(ItemPage), new PropertyMetadata(PathType.Relative));
 
     public ControlInfoDataItem Item
     {
@@ -66,7 +73,7 @@ public sealed partial class ItemPage : Page
     public async void GetDataAsync(NavigationEventArgs e)
     {
         NavigationArgs args = (NavigationArgs) e.Parameter;
-        var item = await ControlInfoDataSource.Instance.GetItemAsync((String) args.Parameter, args.JsonRelativeFilePath, args.IncludedInBuildMode);
+        var item = await ControlInfoDataSource.Instance.GetItemAsync((String) args.Parameter, args.JsonFilePath, PathType, args.IncludedInBuildMode);
 
         if (item != null)
         {
