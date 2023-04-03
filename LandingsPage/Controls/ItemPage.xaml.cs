@@ -80,25 +80,22 @@ public sealed partial class ItemPage : Page
             Item = item;
 
             // Load control page into frame.
-            if (!string.IsNullOrEmpty(item.ApiNamespace))
+            Assembly assembly;
+            if (string.IsNullOrEmpty(item.ApiNamespace))
             {
-                Assembly assembly;
-                if (string.IsNullOrEmpty(item.ApiNamespace))
+                assembly = Application.Current.GetType().Assembly;
+            }
+            else
+            {
+                assembly = Assembly.Load(item.ApiNamespace);
+            }
+            if (assembly is not null)
+            {
+                Type pageType = assembly.GetType(item.UniqueId);
+                if (pageType != null)
                 {
-                    assembly = Application.Current.GetType().Assembly;
-                }
-                else
-                {
-                    assembly = Assembly.Load(item.ApiNamespace);
-                }
-                if (assembly is not null)
-                {
-                    Type pageType = assembly.GetType(item.UniqueId);
-                    if (pageType != null)
-                    {
-                        this.contentFrame.Navigate(pageType);
-                        args.NavigationView.EnsureNavigationSelection(item?.UniqueId);
-                    }
+                    this.contentFrame.Navigate(pageType);
+                    args.NavigationView.EnsureNavigationSelection(item?.UniqueId);
                 }
             }
         }

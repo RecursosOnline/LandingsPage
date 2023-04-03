@@ -1,5 +1,5 @@
 ﻿<ResourceDictionary
-    x:Class="WinUICommunity.LandingsPage.Themes.ItemTemplates"
+    x:Class="WinUICommunity.ItemTemplates"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:WinUICommunity">
