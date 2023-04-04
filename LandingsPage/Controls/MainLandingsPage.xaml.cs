@@ -89,8 +89,9 @@ public sealed partial class MainLandingsPage : ItemsPageBase
 
     public async void GetDataAsync(string JsonFilePath, PathType pathType, IncludedInBuildMode IncludedInBuildMode = IncludedInBuildMode.CheckBasedOnIncludedInBuildProperty)
     {
-        await ControlInfoDataSource.Instance.GetGroupsAsync(JsonFilePath, pathType, IncludedInBuildMode);
-        Items = ControlInfoDataSource.Instance.Groups.Where(g => !g.HideGroup).SelectMany(g => g.Items.Where(i => i.BadgeString != null && !i.HideItem)).OrderBy(i => i.Title).ToList();
+        var dataSource = new ControlInfoDataSource();
+        await dataSource.GetGroupsAsync(JsonFilePath, pathType, IncludedInBuildMode);
+        Items = dataSource.Groups.Where(g => !g.HideGroup).SelectMany(g => g.Items.Where(i => i.BadgeString != null && !i.HideItem)).OrderBy(i => i.Title).ToList();
         GetCollectionViewSource().Source = FormatData();
     }
 
