@@ -33,7 +33,7 @@
  
 ### Create a landing page in the style of WinUI 3 and WinUI-Gallery very quickly and easily
 
-> **_NOTE:_** LandingsPage is based on `WindowsAppSDK` version `1.2.230313.1` stable and `Microsoft.Windows.SDK.BuildTools` version `10.0.22621.755`
+> **_NOTE:_** LandingsPage is based on `WindowsAppSDK` version `1.3.230331000` stable and `Microsoft.Windows.SDK.BuildTools` version `10.0.22621.756`
 
 ## Dependencies
 
@@ -51,16 +51,16 @@ Install-Package WinUICommunity.LandingsPage
 After installing, add the following resources to app.xaml
 
 ```xml
-xmlns:themes="using:WinUICommunity.LandingsPage.Themes"
+xmlns:winui="using:WinUICommunity"
 
-<themes:ItemTemplates/>
+<winui:ItemTemplates/>
 <ResourceDictionary Source="ms-appx:///LandingsPage/Themes/Generic.xaml"/>
 ```
 
 now:
 
 ```xml
-xmlns:controls="using:WinUICommunity.LandingsPage.Controls"
+xmlns:controls="using:WinUICommunity"
 ```
 
 use MainLandingsPage:
