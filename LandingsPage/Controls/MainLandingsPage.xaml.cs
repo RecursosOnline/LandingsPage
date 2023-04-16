@@ -7,10 +7,21 @@ using Microsoft.UI.Xaml.Media;
 namespace WinUICommunity;
 public sealed partial class MainLandingsPage : ItemsPageBase
 {
-    public string NewGroupText { get; set; } = "Recently added";
-    public string UpdatedGroupText { get; set; } = "Recently updated";
-    public string PreviewGroupText { get; set; } = "Preview";
-
+    public string NewGroupText
+    {
+        get { return (string) GetValue(NewGroupTextProperty); }
+        set { SetValue(NewGroupTextProperty, value); }
+    }
+    public string UpdatedGroupText
+    {
+        get { return (string) GetValue(UpdatedGroupTextProperty); }
+        set { SetValue(UpdatedGroupTextProperty, value); }
+    }
+    public string PreviewGroupText
+    {
+        get { return (string) GetValue(PreviewGroupTextProperty); }
+        set { SetValue(PreviewGroupTextProperty, value); }
+    }
     public string HeaderText
     {
         get { return (string) GetValue(HeaderTextProperty); }
@@ -90,6 +101,11 @@ public sealed partial class MainLandingsPage : ItemsPageBase
         get { return (double) GetValue(LazyLoadingThresholdProperty); }
         set { SetValue(LazyLoadingThresholdProperty, value); }
     }
+
+    public static readonly DependencyProperty PreviewGroupTextProperty = DependencyProperty.Register("PreviewGroupText", typeof(string), typeof(MainLandingsPage), new PropertyMetadata("Preview"));
+    public static readonly DependencyProperty UpdatedGroupTextProperty = DependencyProperty.Register("UpdatedGroupText", typeof(string), typeof(MainLandingsPage), new PropertyMetadata("Recently updated"));
+    public static readonly DependencyProperty NewGroupTextProperty = DependencyProperty.Register("NewGroupText", typeof(string), typeof(MainLandingsPage), new PropertyMetadata("Recently added"));
+
     public static readonly DependencyProperty HeaderTextProperty = DependencyProperty.Register("HeaderText", typeof(string), typeof(MainLandingsPage), new PropertyMetadata(default(string)));
     public static readonly DependencyProperty HeaderSubtitleTextProperty = DependencyProperty.Register("HeaderSubtitleText", typeof(string), typeof(MainLandingsPage), new PropertyMetadata(default(string)));
     public static readonly DependencyProperty HeaderImageProperty = DependencyProperty.Register("HeaderImage", typeof(string), typeof(MainLandingsPage), new PropertyMetadata(default(string)));
