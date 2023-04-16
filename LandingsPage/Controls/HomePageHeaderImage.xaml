@@ -18,26 +18,25 @@
             Opacity="0">
             <local:ImageEx
                 x:Name="HeroImage"
+                toolkit:VisualExtensions.NormalizedCenterPoint="0.5"
+                ImageExOpened="OnImageOpened"
                 IsCacheEnabled="{x:Bind IsCacheEnabled, Mode=OneWay}"
                 EnableLazyLoading="{x:Bind EnableLazyLoading, Mode=OneWay}"
                 LazyLoadingThreshold="{x:Bind LazyLoadingThreshold, Mode=OneWay}"
-                PlaceholderSource="{x:Bind PlaceholderSource,Mode=OneWay}"
-                toolkit:VisualExtensions.NormalizedCenterPoint="0.5"
-                ImageExOpened="OnImageOpened"
+                PlaceholderSource="{x:Bind PlaceholderSource, Mode=OneWay}"
                 Source="{x:Bind HeaderImage, Mode=OneWay}"
                 Stretch="UniformToFill" />
 
             <local:ImageEx
                 x:Name="HeroOverlayImage"
+                toolkit:VisualExtensions.NormalizedCenterPoint="0.5"
+                Opacity="0.5"
                 IsCacheEnabled="{x:Bind IsCacheEnabled, Mode=OneWay}"
                 EnableLazyLoading="{x:Bind EnableLazyLoading, Mode=OneWay}"
                 LazyLoadingThreshold="{x:Bind LazyLoadingThreshold, Mode=OneWay}"
-                PlaceholderSource="{x:Bind PlaceholderSource,Mode=OneWay}"
-                toolkit:VisualExtensions.NormalizedCenterPoint="0.5"
-                Opacity="0.5"
+                PlaceholderSource="{x:Bind PlaceholderSource, Mode=OneWay}"
                 Source="{x:Bind HeaderImage, Mode=OneWay}"
                 Stretch="UniformToFill" />
-
         </Grid>
         <Rectangle x:Name="ImageGridSurfaceRec" Fill="Transparent" />
     </Grid>
