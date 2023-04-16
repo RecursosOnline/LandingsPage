@@ -35,7 +35,7 @@
                 EnableLazyLoading="{x:Bind EnableLazyLoading, Mode=OneWay}"
                 LazyLoadingThreshold="{x:Bind LazyLoadingThreshold, Mode=OneWay}"
                 PlaceholderSource="{x:Bind PlaceholderSource, Mode=OneWay}"
-                Source="{x:Bind HeaderImage, Mode=OneWay}"
+                Source="{x:Bind HeaderOverlayImage, Mode=OneWay}"
                 Stretch="UniformToFill" />
         </Grid>
         <Rectangle x:Name="ImageGridSurfaceRec" Fill="Transparent" />

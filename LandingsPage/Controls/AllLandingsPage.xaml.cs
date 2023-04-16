@@ -10,7 +10,11 @@ public sealed partial class AllLandingsPage : ItemsPageBase
         get { return (string) GetValue(HeaderImageProperty); }
         set { SetValue(HeaderImageProperty, value); }
     }
-
+    public string HeaderOverlayImage
+    {
+        get { return (string) GetValue(HeaderOverlayImageProperty); }
+        set { SetValue(HeaderOverlayImageProperty, value); }
+    }
     public string HeaderText
     {
         get { return (string) GetValue(HeaderTextProperty); }
@@ -51,6 +55,7 @@ public sealed partial class AllLandingsPage : ItemsPageBase
 
     public static readonly DependencyProperty HeaderTextProperty = DependencyProperty.Register("HeaderText", typeof(string), typeof(AllLandingsPage), new PropertyMetadata("All"));
     public static readonly DependencyProperty HeaderImageProperty = DependencyProperty.Register("HeaderImage", typeof(string), typeof(AllLandingsPage), new PropertyMetadata(default(string)));
+    public static readonly DependencyProperty HeaderOverlayImageProperty = DependencyProperty.Register("HeaderOverlayImage", typeof(string), typeof(AllLandingsPage), new PropertyMetadata(default(string)));
     public static readonly DependencyProperty HeaderImageHeightProperty = DependencyProperty.Register("HeaderImageHeight", typeof(double), typeof(AllLandingsPage), new PropertyMetadata(200.0));
     public static readonly DependencyProperty HeaderForegroundProperty = DependencyProperty.Register("HeaderForeground", typeof(Brush), typeof(AllLandingsPage), new PropertyMetadata(Application.Current.Resources["TextFillColorPrimaryBrush"] as Brush));
     public static readonly DependencyProperty PlaceholderSourceProperty = DependencyProperty.Register("PlaceholderSource", typeof(ImageSource), typeof(AllLandingsPage), new PropertyMetadata(default(ImageSource)));

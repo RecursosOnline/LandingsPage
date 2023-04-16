@@ -19,6 +19,11 @@ public sealed partial class HomePageHeaderImage : UserControl
         get { return (string) GetValue(HeaderImageProperty); }
         set { SetValue(HeaderImageProperty, value); }
     }
+    public string HeaderOverlayImage
+    {
+        get { return (string) GetValue(HeaderOverlayImageProperty); }
+        set { SetValue(HeaderOverlayImageProperty, value); }
+    }
     public ImageSource PlaceholderSource
     {
         get { return (ImageSource) GetValue(PlaceholderSourceProperty); }
@@ -40,6 +45,7 @@ public sealed partial class HomePageHeaderImage : UserControl
         set { SetValue(LazyLoadingThresholdProperty, value); }
     }
     public static readonly DependencyProperty HeaderImageProperty = DependencyProperty.Register("HeaderImage", typeof(string), typeof(HomePageHeaderImage), new PropertyMetadata(default(string)));
+    public static readonly DependencyProperty HeaderOverlayImageProperty = DependencyProperty.Register("HeaderOverlayImage", typeof(string), typeof(HomePageHeaderImage), new PropertyMetadata(default(string)));
     public static readonly DependencyProperty PlaceholderSourceProperty = DependencyProperty.Register("PlaceholderSource", typeof(ImageSource), typeof(HomePageHeaderImage), new PropertyMetadata(default(ImageSource)));
     public static readonly DependencyProperty IsCacheEnabledProperty = DependencyProperty.Register("IsCacheEnabled", typeof(bool), typeof(HomePageHeaderImage), new PropertyMetadata(true));
     public static readonly DependencyProperty EnableLazyLoadingProperty = DependencyProperty.Register("EnableLazyLoading", typeof(bool), typeof(HomePageHeaderImage), new PropertyMetadata(true));
@@ -62,6 +68,10 @@ public sealed partial class HomePageHeaderImage : UserControl
 
     private void OnLoaded(object sender, RoutedEventArgs e)
     {
+        if (string.IsNullOrEmpty(HeaderOverlayImage))
+        {
+            HeaderOverlayImage = HeaderImage;
+        }
         _imageGridVisual = ElementCompositionPreview.GetElementVisual(ImageGrid);
         _compositor = _imageGridVisual.Compositor;
 

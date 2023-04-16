@@ -45,7 +45,11 @@ public sealed partial class MainLandingsPage : ItemsPageBase
         get { return (string) GetValue(HeaderImageProperty); }
         set { SetValue(HeaderImageProperty, value); }
     }
-
+    public string HeaderOverlayImage
+    {
+        get { return (string) GetValue(HeaderOverlayImageProperty); }
+        set { SetValue(HeaderOverlayImageProperty, value); }
+    }
     public double HeaderImageHeight
     {
         get { return (double) GetValue(HeaderImageHeightProperty); }
@@ -109,6 +113,7 @@ public sealed partial class MainLandingsPage : ItemsPageBase
     public static readonly DependencyProperty HeaderTextProperty = DependencyProperty.Register("HeaderText", typeof(string), typeof(MainLandingsPage), new PropertyMetadata(default(string)));
     public static readonly DependencyProperty HeaderSubtitleTextProperty = DependencyProperty.Register("HeaderSubtitleText", typeof(string), typeof(MainLandingsPage), new PropertyMetadata(default(string)));
     public static readonly DependencyProperty HeaderImageProperty = DependencyProperty.Register("HeaderImage", typeof(string), typeof(MainLandingsPage), new PropertyMetadata(default(string)));
+    public static readonly DependencyProperty HeaderOverlayImageProperty = DependencyProperty.Register("HeaderOverlayImage", typeof(string), typeof(MainLandingsPage), new PropertyMetadata(default(string)));
     public static readonly DependencyProperty HeaderContentProperty = DependencyProperty.Register("HeaderContent", typeof(object), typeof(MainLandingsPage), new PropertyMetadata(null));
     public static readonly DependencyProperty HeaderImageHeightProperty = DependencyProperty.Register("HeaderImageHeight", typeof(double), typeof(MainLandingsPage), new PropertyMetadata(396.0));
     public static readonly DependencyProperty HeaderMarginProperty = DependencyProperty.Register("HeaderMargin", typeof(Thickness), typeof(MainLandingsPage), new PropertyMetadata(new Thickness(-24, 0, -24, 0)));
