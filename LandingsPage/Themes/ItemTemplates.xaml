@@ -43,7 +43,7 @@
                 </VisualStateManager.VisualStateGroups>
 
                 <Grid Width="72" CornerRadius="{ThemeResource ControlCornerRadius}">
-                    <Image
+                    <local:ImageEx
                         x:Name="gridImage"
                         Width="48"
                         VerticalAlignment="Center"

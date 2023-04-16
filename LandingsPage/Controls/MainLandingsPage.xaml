@@ -56,6 +56,10 @@
                         Grid.RowSpan="2"
                         Height="{x:Bind HeaderImageHeight, Mode=OneWay}"
                         HeaderImage="{x:Bind HeaderImage, Mode=OneWay}"
+                        IsCacheEnabled="{x:Bind IsCacheEnabled, Mode=OneWay}"
+                        EnableLazyLoading="{x:Bind EnableLazyLoading, Mode=OneWay}"
+                        LazyLoadingThreshold="{x:Bind LazyLoadingThreshold, Mode=OneWay}"
+                        PlaceholderSource="{x:Bind PlaceholderSource,Mode=OneWay}"
                         VerticalAlignment="Top" />
 
                     <TextBlock AutomationProperties.AutomationId="__ClickableAreaTextBlock" />

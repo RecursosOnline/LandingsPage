@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:toolkit="using:CommunityToolkit.WinUI.UI"
+    xmlns:local="using:WinUICommunity"
     Loaded="OnLoaded"
     Loading="OnLoading"
     Unloaded="OnUnloaded"
@@ -15,15 +16,23 @@
             x:Name="ImageGrid"
             Background="{ThemeResource BackgroundGradient}"
             Opacity="0">
-            <Image
+            <local:ImageEx
                 x:Name="HeroImage"
+                IsCacheEnabled="{x:Bind IsCacheEnabled, Mode=OneWay}"
+                EnableLazyLoading="{x:Bind EnableLazyLoading, Mode=OneWay}"
+                LazyLoadingThreshold="{x:Bind LazyLoadingThreshold, Mode=OneWay}"
+                PlaceholderSource="{x:Bind PlaceholderSource,Mode=OneWay}"
                 toolkit:VisualExtensions.NormalizedCenterPoint="0.5"
-                ImageOpened="OnImageOpened"
+                ImageExOpened="OnImageOpened"
                 Source="{x:Bind HeaderImage, Mode=OneWay}"
                 Stretch="UniformToFill" />
 
-            <Image
+            <local:ImageEx
                 x:Name="HeroOverlayImage"
+                IsCacheEnabled="{x:Bind IsCacheEnabled, Mode=OneWay}"
+                EnableLazyLoading="{x:Bind EnableLazyLoading, Mode=OneWay}"
+                LazyLoadingThreshold="{x:Bind LazyLoadingThreshold, Mode=OneWay}"
+                PlaceholderSource="{x:Bind PlaceholderSource,Mode=OneWay}"
                 toolkit:VisualExtensions.NormalizedCenterPoint="0.5"
                 Opacity="0.5"
                 Source="{x:Bind HeaderImage, Mode=OneWay}"

@@ -7,6 +7,7 @@ using Microsoft.UI.Composition;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Hosting;
+using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Media.Animation;
 
 namespace WinUICommunity;
@@ -18,7 +19,31 @@ public sealed partial class HomePageHeaderImage : UserControl
         get { return (string) GetValue(HeaderImageProperty); }
         set { SetValue(HeaderImageProperty, value); }
     }
+    public ImageSource PlaceholderSource
+    {
+        get { return (ImageSource) GetValue(PlaceholderSourceProperty); }
+        set { SetValue(PlaceholderSourceProperty, value); }
+    }
+    public bool IsCacheEnabled
+    {
+        get { return (bool) GetValue(IsCacheEnabledProperty); }
+        set { SetValue(IsCacheEnabledProperty, value); }
+    }
+    public bool EnableLazyLoading
+    {
+        get { return (bool) GetValue(EnableLazyLoadingProperty); }
+        set { SetValue(EnableLazyLoadingProperty, value); }
+    }
+    public double LazyLoadingThreshold
+    {
+        get { return (double) GetValue(LazyLoadingThresholdProperty); }
+        set { SetValue(LazyLoadingThresholdProperty, value); }
+    }
     public static readonly DependencyProperty HeaderImageProperty = DependencyProperty.Register("HeaderImage", typeof(string), typeof(HomePageHeaderImage), new PropertyMetadata(default(string)));
+    public static readonly DependencyProperty PlaceholderSourceProperty = DependencyProperty.Register("PlaceholderSource", typeof(ImageSource), typeof(HomePageHeaderImage), new PropertyMetadata(default(ImageSource)));
+    public static readonly DependencyProperty IsCacheEnabledProperty = DependencyProperty.Register("IsCacheEnabled", typeof(bool), typeof(HomePageHeaderImage), new PropertyMetadata(true));
+    public static readonly DependencyProperty EnableLazyLoadingProperty = DependencyProperty.Register("EnableLazyLoading", typeof(bool), typeof(HomePageHeaderImage), new PropertyMetadata(true));
+    public static readonly DependencyProperty LazyLoadingThresholdProperty = DependencyProperty.Register("LazyLoadingThreshold", typeof(double), typeof(HomePageHeaderImage), new PropertyMetadata(300.0));
 
     private Compositor _compositor;
     private CompositionLinearGradientBrush _imageGridBottomGradientBrush;
@@ -106,7 +131,7 @@ public sealed partial class HomePageHeaderImage : UserControl
         _bottomGradientStartPointAnimation?.Properties.InsertScalar(GradientSizeKey, 180);
     }
 
-    private void OnImageOpened(object sender, RoutedEventArgs e)
+    private void OnImageOpened(object sender, ImageExOpenedEventArgs e)
     {
         AnimateImage();
     }
