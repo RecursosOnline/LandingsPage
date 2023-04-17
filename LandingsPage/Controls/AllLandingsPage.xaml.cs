@@ -72,6 +72,6 @@ public sealed partial class AllLandingsPage : ItemsPageBase
     {
         var dataSource = new ControlInfoDataSource();
         await dataSource.GetGroupsAsync(JsonFilePath, pathType, IncludedInBuildMode);
-        Items = dataSource.Groups.Where(g => !g.IsSpecialSection && !g.HideGroup).SelectMany(g => g.Items.Where(i => !i.HideItem)).OrderBy(i => i.Title).ToList();
+        Items = dataSource.Groups.Where(g => !g.IsSpecialSection && !g.HideGroup).SelectMany(g => g.Items.Where(i => !i.HideItem)).OrderBy(i => i.Title);
     }
 }

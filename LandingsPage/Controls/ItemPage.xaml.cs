@@ -71,7 +71,7 @@ public sealed partial class ItemPage : Page
         await dataSource.GetGroupsAsync(args.JsonFilePath, args.PathType, args.IncludedInBuildMode);
         var item = await dataSource.GetItemAsync((String) args.Parameter, args.JsonFilePath, args.PathType, args.IncludedInBuildMode);
 
-        if (item != null)
+        if (item != null && !string.IsNullOrEmpty(item.UniqueId))
         {
             Item = item;
 

@@ -136,7 +136,7 @@ public sealed partial class MainLandingsPage : ItemsPageBase
     {
         var dataSource = new ControlInfoDataSource();
         await dataSource.GetGroupsAsync(JsonFilePath, pathType, IncludedInBuildMode);
-        Items = dataSource.Groups.Where(g => !g.HideGroup).SelectMany(g => g.Items.Where(i => i.BadgeString != null && !i.HideItem)).OrderBy(i => i.Title).ToList();
+        Items = dataSource.Groups.Where(g => !g.HideGroup).SelectMany(g => g.Items.Where(i => i.BadgeString != null && !i.HideItem)).OrderBy(i => i.Title);
         GetCollectionViewSource().Source = FormatData();
     }
 
