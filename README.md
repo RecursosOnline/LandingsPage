@@ -48,70 +48,79 @@ This package is based on the following packages
 Install-Package WinUICommunity.LandingsPage
 ```
 
+and add namespace:
+```xml
+xmlns:wuc="using:WinUICommunity"
+```
+
+```cs
+using WinUICommunity;
+```
+
 After installing, add the following resources to app.xaml
 
 ```xml
-xmlns:winui="using:WinUICommunity"
+xmlns:wuc="using:WinUICommunity"
 
-<winui:ItemTemplates/>
+<wuc:ItemTemplates/>
 <ResourceDictionary Source="ms-appx:///LandingsPage/Themes/Generic.xaml"/>
 ```
 
 now:
 
 ```xml
-xmlns:controls="using:WinUICommunity"
+xmlns:wuc="using:WinUICommunity"
 ```
 
 use MainLandingsPage:
 
 ```xml
-<controls:MainLandingsPage x:Name="mainLandingsPage" Loaded="mainLandingsPage_Loaded"
+<wuc:MainLandingsPage x:Name="mainLandingsPage" Loaded="mainLandingsPage_Loaded"
                     HeaderImage="ms-appx:///Assets/GalleryHeaderImage.png"
                     HeaderText="WinUI 3 Gallery"
                     HeaderSubtitleText="WinAppSDK 1.2"
                     OnItemClick="mainLandingsPage_OnItemClick">
-    <controls:MainLandingsPage.HeaderContent>
+    <wuc:MainLandingsPage.HeaderContent>
         <StackPanel Orientation="Horizontal" Spacing="10">
-            <controls:HeaderTile
+            <wuc:HeaderTile
                 OnItemClick="HeaderTile_OnHeaderItemClick"
                 Title="Getting started"
                 Description="An overview of app development options, tools, and samples.">
-                <controls:HeaderTile.Source>
+                <wuc:HeaderTile.Source>
                     <Image Source="/Assets/HomeHeaderTiles/Header-WinUIGallery.png" />
-                </controls:HeaderTile.Source>
-            </controls:HeaderTile>
-            <controls:HeaderTile
+                </wuc:HeaderTile.Source>
+            </wuc:HeaderTile>
+            <wuc:HeaderTile
                 Title="Windows design"
                 Description="Design guidelines and toolkits for creating native app experiences."
                 Link="https://docs.microsoft.com/windows/apps/design/">
-                <controls:HeaderTile.Source>
+                <wuc:HeaderTile.Source>
                     <Image Source="/Assets/HomeHeaderTiles/Header-WindowsDesign.png" />
-                </controls:HeaderTile.Source>
-            </controls:HeaderTile>
-            <controls:HeaderTile
+                </wuc:HeaderTile.Source>
+            </wuc:HeaderTile>
+            <wuc:HeaderTile
                 Title="Community Toolkit"
                 Description="A collection of helper functions, custom controls, and app services."
                 Link="https://apps.microsoft.com/store/detail/windows-community-toolkit-sample-app/9NBLGGH4TLCQ">
-                <controls:HeaderTile.Source>
+                <wuc:HeaderTile.Source>
                     <Image Source="/Assets/HomeHeaderTiles/Header-Toolkit.png" />
-                </controls:HeaderTile.Source>
-            </controls:HeaderTile>
-            <controls:HeaderTile
+                </wuc:HeaderTile.Source>
+            </wuc:HeaderTile>
+            <wuc:HeaderTile
                 Title="Code samples"
                 Description="Find samples that demonstrate specific tasks, features, and APIs."
                 Link="https://docs.microsoft.com/windows/apps/get-started/samples">
-                <controls:HeaderTile.Source>
+                <wuc:HeaderTile.Source>
                     <FontIcon
                         Margin="0,8,0,0"
                         FontSize="44"
                         Foreground="{ThemeResource TextFillColorPrimaryBrush}"
                         Glyph="&#xE943;" />
-                </controls:HeaderTile.Source>
-            </controls:HeaderTile>
+                </wuc:HeaderTile.Source>
+            </wuc:HeaderTile>
         </StackPanel>
-    </controls:MainLandingsPage.HeaderContent>
-</controls:MainLandingsPage>
+    </wuc:MainLandingsPage.HeaderContent>
+</wuc:MainLandingsPage>
 ```
 
 in code-behind:
