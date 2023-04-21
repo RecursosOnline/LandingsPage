@@ -43,18 +43,21 @@ This package is based on the following packages
 - CommunityToolkit.WinUI.UI.Animations
 - Microsoft.Graphics.Win2D
 
+
+## Namespace
+We moved all namespaces into a single namespace. No matter which (WinUICommunity) library you use, the namespace is always as follows
+ For use in the Xaml:
+ ```xml 
+ xmlns:wuc="using:WinUICommunity"
+ ```
+ For use in the Csharp:
+ ```csharp
+ using WinUICommunity;
+ ```
+
 ## Install
 ```
 Install-Package WinUICommunity.LandingsPage
-```
-
-and add namespace:
-```xml
-xmlns:wuc="using:WinUICommunity"
-```
-
-```cs
-using WinUICommunity;
 ```
 
 After installing, add the following resources to app.xaml
