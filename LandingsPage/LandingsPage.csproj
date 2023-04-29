@@ -6,7 +6,7 @@
 	  <RootNamespace>WinUICommunity.LandingsPage</RootNamespace>
     <NoWarn>CA1416;WMC1506</NoWarn>
 	  <UseWinUI>true</UseWinUI>
-	  <Version>2.0.4</Version>
+	  <Version>2.0.5</Version>
     <Authors>WinUICommunity</Authors>
     <Copyright>Copyright (c) 2021-2023 Mahdi Hosseini</Copyright>
 	  <Description>Create a landings page in the style of WinUI 3 and WinUI-Gallery very quickly and easily</Description>
